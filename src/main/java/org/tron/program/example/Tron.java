@@ -32,7 +32,7 @@ public class Tron {
   @Parameter(names = {"--type", "-t"}, validateWith = PeerType.class)
   private String type = "normal";
 
-
+  //Build tron object
   public static void main(String[] args) {
     Tron tron = new Tron();
     JCommander.newBuilder()
@@ -41,11 +41,11 @@ public class Tron {
         .parse(args);
     tron.run();
   }
-
+  //Get the peer in use
   public static Peer getPeer() {
     return peer;
   }
-
+  //Initialize the application
   public void run() {
 
     CliApplication app = new ApplicationFactory()
